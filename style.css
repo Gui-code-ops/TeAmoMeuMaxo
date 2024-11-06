@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    margin-top: 35vh;
+}
+.heart {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    transform: rotate(-45deg);
+    background-color: #ff4d6d;
+    margin-bottom: 20px;
+    opacity: 0; /* Inicialmente invisível */
+    animation: fadeIn 2s forwards; /* Aparecer com a animação fade-in */
+}
+
+.heart::before,
+.heart::after {
+    content: "";
+    width: 100px;
+    height: 100px;
+    background-color: #ff4d6d;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.heart::before {
+    top: -50px;
+    left: 0;
+}
+
+.heart::after {
+    top: 0;
+    left: 50px;
+}
+
+.love-text {
+    font-size: 24px;
+    color: #ff4d6d;
+    font-weight: bold;
+    text-transform: uppercase;
+    opacity: 0; /* Inicialmente invisível */
+    animation: fadeInText 2s 2s forwards; /* Texto aparece após o coração */
+    padding-top: 1rem;
+}
+
+/* Animação fade-in para o coração */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        scale: 1;
+    }
+    to {
+        scale: 1.1;
+        opacity: 1;
+    }
+}
+
+/* Animação fade-in para o texto "Eu te amo" */
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
